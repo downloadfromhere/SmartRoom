@@ -1,0 +1,104 @@
+
+body {
+	 background-image: url("https://wallpaper-house.com/data/out/12/wallpaper2you_481766.jpg");
+	background-color: #cccccc;
+	margin: 0;
+}
+
+#outer {
+  width: 100%;
+  text-align: center;
+}
+#inner {
+  display: inline-block;
+}
+	
+.headline {
+	padding-top: 10px;
+	padding-bottom:20px;
+    text-align: center;
+	font-family: 'Poor Story', cursive;
+}
+	
+.btn-group .button {
+	height:70px;
+    width:80px; 
+    color: white;
+	border: 1px transparent;
+     padding: 15px 32px; 
+    float: left;	
+	
+}
+
+.button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+.button:hover {
+    background-color: #3e8e41;
+}
+
+/* --- Colors for ButtonArray --- */
+.blue {background-color: #0000ff;}		/* Blue Dark */
+.blue:hover{background-color: #0000cd;} 
+.blue1{background-color: #0046ff;}		/* Blue Light */
+.blue1:hover{background-color: #004ee4;} 
+.blue2{background-color: #0080ff;}		/* Blue much lighter */
+.blue2:hover{background-color: #0079e6;} 
+.cyan{background-color: #00ffff;} 		/* Cyan */
+.cyan:hover{background-color: #49dddf;} 
+.purple{background-color: #9036ff;}  	/* Purple		P! */
+.purple:hover{background-color: #6c32eb;} 
+.purple1{background-color: #d300ff;}  	/* Purple more red		P! */
+.purple1:hover{background-color: #c500e5;} 
+.pink{background-color: #ff00cb;} 		/* Pink */
+.pink:hover{background-color: #ff00b5;} 
+.magenta{background-color: #ff0080;}  	/* Magenta very red */
+.magenta:hover{background-color: #e10064;} 
+.red{background-color: #ff0000;} 		/* Red */
+.red:hover{background-color: #c90000;} 
+.red1{background-color: #ff4000;} 		/* Right Light */ 
+.red1:hover{background-color: #eb2c00;} 
+.orange{background-color: #ff8000;} 	/* Orange */
+.orange:hover{background-color: #eb6c00;} 
+.orange1{background-color: #f5b500;}	/* Oragen bit brown */
+.orange1:hover{background-color: #eba100;} 
+.yellow{background-color: #f7f700;}		/* Yellow */
+.yellow:hover{background-color: #dcdc00;} 
+.green{background-color: #00d700;}  	/* Green */
+.green:hover{background-color: #00b900;} 
+.green1{background-color: #00ff00;} 	/* Green toic		P! */
+.green1:hover{background-color: #00f000;}  
+.green2{background-color: #00ff80;}  	/* Green very light */
+.green2:hover{background-color: #00d799;} 
+
+
+/* --- Toolbar --- */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
