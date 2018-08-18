@@ -1,5 +1,5 @@
 
-var mqtt;
+	var mqtt;
 	var reconnectTimeout = 2000;
 	var Timestamp;
 
@@ -33,14 +33,14 @@ var mqtt;
 			options.userName = username;
 			options.password = password;
 		}
-		//console.log("Host="+ host + ", port=" + port + ", path=" + path + " TLS = " + useTLS + " username=" + username + " password=" + password);
+		console.log("Host="+ host + ", port=" + port + ", path=" + path + " TLS = " + useTLS + " username=" + username + " password=" + password);
 		mqtt.connect(options);
 	}
 
 	//Called when successfully connected to MQTT_Broker
 	function onConnect() {	
 		mqtt.subscribe(moisture_topic, {qos: 0});
-		$('#status').val('Connected to ' + host + ':' + port + path);
+		//$('#status').val('Connected to ' + host + ':' + port + path);
 	}
 
 	//Called if web client lost tconnection to the MQTT_Broker
@@ -54,11 +54,19 @@ var mqtt;
 		var topic = message.destinationName;
 		var payload = message.payloadString;
 		var moisture = parseInt(payload)+3;
+		
+		//console.log('topic: '+typeof 'topic');
+		console.log('payload: '+typeof 'payload');
+		console.log('moisture_int: '+typeof 'moisture');
+		//console.log('moisture_topic: '+	typeof 'moisture_topic');
 				
-		if(topic == moisture_topic) {
+		if(topic === moisture_topic) {
 			//$('#ws').prepend('<li>' + moisture + '</li>');
-			//document.getElementById("myRange").value = moisture;
+			if(document.getElementById("myRange")) {
+				document.getElementById("myRange").value = moisture;
+			}
 		}
+		console.log("LED JS");
 		//Print additional information
 		//$('#ws').prepend('<li>' + topic + ' = ' + payload + '</li>');
 	};
@@ -72,13 +80,12 @@ var mqtt;
 		topic="LED_Bett/commands/"+action;
 		mqtt.send(topic, "1", 1, false);
 	}
+	
 			
-
-  			
-  			
-  			$(document).ready(function() {
-  				MQTTconnect();
-  			});
+  	$(document).ready(function() {
+		console.log("HELLO from mqttconnection");
+  		MQTTconnect();
+  	});
 
 
 	

@@ -5,49 +5,42 @@
 		<title>Mosquitto Websockets</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-		
-		<script src="mqttws31.js" type="text/javascript"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="config.js" type="text/javascript"></script>
-		<script src="script.js" type="text/javascript"></script>
+		<script src="mqttconnection.js" type="text/javascript"></script>
+		<script src="mqttws31.js" type="text/javascript"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<link href="styles.css" rel="stylesheet" type="text/css"/>
+		<link href="styles/toolbar.css" rel="stylesheet" type="text/css"/>
 	</head>
 
-	
 	<body>
 		<ul class="topnav">
 		  <li><a class="active" href="#home">LED Stripe</a></li>
-		  <li><a href="Water_Level.html">Water Level</a></li>
+		  <li><a href="WaterLevel.html">Water Level</a></li>
 		  <li><a href="#contact">Curtoins</a></li>
 		  <li class="right"><a href="#about">Status</a></li>
 		</ul>
 	
-		<div class="headline">
-			<h1 style="font-size:430%;">LED STREIFEN</h1>
-		</div>
+		<h1>LED STREIFEN</h1>
 
-<!-- 	<div>
-			<ul id='ws' style="font-family: 'Courier New', Courier, monospace;"></ul>
-			Status: <input type='text' id='status' size="32" disabled />
-		</div>  -->
-		
 		<div id="outer">  
-			<p id="inner" class="container">
+			<div id="inner" class="container, command">
 				<button class="btn-lg btn-primary" onclick="SendCommand('mix')">Awesome</button>
 				<button class="btn-lg btn-primary" onclick="SendCommand('Rainbow')">Rainbow</button>
-			</p>
-			<br style="clear:both" />
-			<p id="inner" class="container">
+			</div>
+			
+			<div id="inner" class="container">
 				<button class="btn-lg btn-default" onclick="SendRGB('255','255','255')"><i class="far fa-lightbulb"></i> Light</button>				
-			</p>
-			</br>
+			</div>
 
 			<div id="inner" class="btn-group">
+				
 				<button class="button cyan" onclick="SendRGB('0','255','255')"></button>
 				<button class="button blue2" onclick="SendRGB('0','125','255')"></button>
 				<button class="button blue1" onclick="SendRGB('0','70','255')"></button>
@@ -69,10 +62,8 @@
 				<button class="button red" onclick="SendRGB('255','00','0')"></button>
 				
 			</div>
-			</br></br></br>
-		
 			<div id="inner" class="container">	
-				<button class="btn btn-danger" onclick="SendCommand('clear')()">Clear</button>
+				<button class="btn btn-danger" onclick="SendCommand('clear')">Clear</button>
 			</div>	
 		</div>
 	</body>
