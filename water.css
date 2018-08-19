@@ -3,95 +3,35 @@ body {
 	/* background-image: url("https://assets.awwwards.com/awards/images/2015/04/pattern.jpg");*/ 
 	/* background-image: url("https://c1.staticflickr.com/8/7163/6769877431_c0df769478_b.jpg"); */
 	 background-image: url("https://wallpaper-house.com/data/out/12/wallpaper2you_481766.jpg");
-	background-color: #cccccc;
+
 	margin: 0;
 }
 
 #outer {
-  width: 100%;
+  width: 100%	;
   text-align: center;
 }
 #inner {
   display: inline-block;
 }
 	
-div.a {
+/* Water Level Progress Bar */
+.container {
+	margin-top:50px;
+}
+.vertical {
+  display: inline-block;
+  width: 220px;
+  height: 40px;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+.vertical {
+  box-shadow: inset 0px 4px 6px #ccc;
+}
+.progress-bar {
+  box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
     text-align: center;
-	font-family: 'Poor Story', cursive;
-}
-
-
-/* Chrome & Opera */
-input[type="range"]{
-	position: absolute;
-    top: 40%;
-	transform: rotate(270deg);
-	width:280px;
-	height:40px;
-	-webkit-appearance: none;
-	outline:none;
-	border-radius:20px;
-	background:#41d9f4;
-	border:2px solid #000;
-}
-input[type="range"]::-webkit-slider-runnable-track{
-	height:8px;
-	background:#4171f4;
-	border-radius:10px;
-	transition:.4s;
-}
-input[type="range"]:hover::-webkit-slider-runnable-track,
-input[type="range"]:focus::-webkit-slider-runnable-track{
-	background:#4641f4;
-}
-input[type="range"]::-webkit-slider-thumb{
-	-webkit-appearance: none;
-	width:15px;
-	height:34px;
-	background:red;
-	border-radius:18px;
-	margin-top:-13px;
-	cursor:pointer;
-	border:3px solid #41d9f4;
-	transition:.4s;
-}
-input[type="range"]:hover::-webkit-slider-thumb,
-input[type="range"]:focus::-webkit-slider-thumb{
-	background: darkorange;
-}
-
-/* Firefox */
-input[type="range"]::-moz-focus-outer{
-	border:0;
-}
-input[type="range"]::-moz-range-track{
-	height:0px;
-	background:#4171f4;
-	border-radius:10px;
-}
-input[type="range"]:hover::-moz-range-track,
-input[type="range"]:focus::-moz-range-track{
-	background:#4641f4;
-}
-input[type="range"]::-moz-range-thumb{
-	width:0px;
-	height:0px;
-	background:black;
-	border-radius:6px;
-	cursor:pointer;
-	border:0px solid #41d9f4;
-}
-input[type="range"]:hover::-moz-range-thumb,
-input[type="range"]:focus::-moz-range-thumb{
-	background:black;
-}
-input[type="range"]::-moz-range-progress{
-	background:#0080ff;
-	border-radius:4px;
-	height:36px;
-	border-radius:15px;
-}
-input[type="range"]:hover::-moz-range-progress,
-input[type="range"]:focus::-moz-range-progress{
-	background:blue;
+  line-height: 40px;
+  font-size:18px;
 }

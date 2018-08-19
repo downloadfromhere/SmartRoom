@@ -53,17 +53,16 @@
 	function onMessageArrived(message) {
 		var topic = message.destinationName;
 		var payload = message.payloadString;
-		var moisture = parseInt(payload)+3;
+		var moisture = parseInt(payload, 10);
 		
-		//console.log('topic: '+typeof 'topic');
-		console.log('payload: '+typeof 'payload');
-		console.log('moisture_int: '+typeof 'moisture');
-		//console.log('moisture_topic: '+	typeof 'moisture_topic');
+		console.log('payload: '+ payload);
 				
 		if(topic === moisture_topic) {
-			//$('#ws').prepend('<li>' + moisture + '</li>');
-			if(document.getElementById("myRange")) {
-				document.getElementById("myRange").value = moisture;
+			var getBar = document.getElementById("myBar");
+			var moistureValue = ((30 - moisture) * 5) + '%';
+			if(getBar) {
+				getBar.style.width = moistureValue; 
+				getBar.innerHTML = moistureValue;
 			}
 		}
 		console.log("LED JS");
@@ -81,7 +80,11 @@
 		mqtt.send(topic, "1", 1, false);
 	}
 	
-			
+	function move() {
+		document.getElementById("myBar").style.width = "60" + '%'; 
+		document.getElementById("myBar").innerHTML = "60" + '%';
+	}
+		
   	$(document).ready(function() {
 		console.log("HELLO from mqttconnection");
   		MQTTconnect();
