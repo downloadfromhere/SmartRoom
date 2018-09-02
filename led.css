@@ -70,8 +70,108 @@ body {
 .green1{background-color: #00ff00;} 	/* Green toic		P! */
 .green1:hover{background-color: #00f000;}  
 .green2{background-color: #00ff80;}  	/* Green very light */
-.green2:hover{background-color: #00d799;} 
+.green2:hover{background-color: #00d799;}
 
 
+.switch {
+    float:right;
+    position: relative;
+    display: block;
+    vertical-align: top;
+    width: 116px;
+    height: 47px;
+    margin: 0px 10px 10px 15px;
+    background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+    border-radius: 20px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.switch-label {
+    font-size: 12px;
+    position: relative;
+    display: block;
+    height: inherit;
+    text-transform: uppercase;
+    background: #eceeef;
+    border-radius: inherit;
+    box-shadow: 1px 1px 1px 1px;
+}
+.switch-label:hover{background-color: #286090;}
+.switch-label:before, .switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+}
+.switch-label:before {
+    content: attr(data-off);
+    right: 11px;
+    color: #aaaaaa;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+    content: attr(data-on);
+    left: 11px;
+    color: #FFFFFF;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+    background: #337ab7;
+    box-shadow: 1px 1px 1px 1px;
+}
+.switch-input:checked ~ .switch-label:before {
+    opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+    opacity: 1;
+}
+.switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+    left: 74px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+/* Transition
+    ========================== */
+.switch-label, .switch-handle {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+}
 
 
